@@ -1,0 +1,65 @@
+{
+	"name": "autonavigator",
+	"displayName": "Auto Navigator",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.35.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.switchTemplate",
+		"onCommand:extension.switchStyle",
+		"onCommand:extension.switchJs"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.switchTemplate",
+				"title": "switch template"
+			},
+			{
+				"command": "extension.switchStyle",
+				"title": "switch style"
+			},
+			{
+				"command": "extension.switchJs",
+				"title": "switch js"
+			}
+		],
+		"keybindings": [
+            {
+                "command": "extension.switchTemplate",
+                "key": "alt+o",
+                "mac": "shift+alt+o"
+            },
+            {
+                "command": "extension.switchStyle",
+                "key": "alt+i",
+                "mac": "shift+alt+i"
+            },
+            {
+                "command": "extension.switchJs",
+                "key": "alt+u",
+                "mac": "shift+alt+p"
+            }
+        ]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"tslint": "^5.12.1",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	}
+}
